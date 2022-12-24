@@ -15,18 +15,23 @@
                 const name = event.target.username.value;
                 const email = event.target.emailId.value;
                 const PhoneNo = event.target.telephoneNo.value;
-                localStorage.setItem('name',name )
-                localStorage.setItem('email',email )
-                localStorage.setItem('PhoneNo',PhoneNo )
+                //localStorage.setItem('name',name )
+                //localStorage.setItem('email',email )
+                //localStorage.setItem('PhoneNo',PhoneNo )
                 const obj = {
 name,
 email,
 PhoneNo
 }
-localStorage.setItem('userDetailsinObj', JSON.stringify(obj)); 
+
+//localStorage.setItem('userDetailsinObj', JSON.stringify(obj));
+localStorage.setItem(obj.PhoneNo, JSON.stringify(obj));
+
+
             }
         </script>
     </body>
 </html>
+
 
 
