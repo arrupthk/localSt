@@ -1,12 +1,27 @@
 <html>
+    <head>
+        <meta>
+    </meta>
+    <style>
+        form { background-color: blueviolet;
+            text-align:center;
+        }
+        input {
+            font-size: 30px;
+            color: orangered;
+            width: 1000 px;
+        }
+    </style>
+    </head>
     <body>
         <form onsubmit="saveToLocalStorage(event)">
-            "name"
+            name
             <input type="text" name ="username" required/> <br>
-            "email"
+            email
             <input type="email" name ="emailId" required/><br>
-            "phone number"
+        phone number
             <input type="tel" name ="telephoneNo" required/><br>
+            <br>
             <button> Submit</button>
         </form>
         <ul id="listofusers"></ul>
@@ -26,18 +41,21 @@ PhoneNo
 }
 
 //localStorage.setItem('userDetailsinObj', JSON.stringify(obj));
-localStorage.setItem(obj.PhoneNo, JSON.stringify(obj));
+localStorage.setItem(obj.email, JSON.stringify(obj));
 showNewUserOnScreen(obj)
             }
             function showNewUserOnScreen(trial)
             {
                 const parentNode1 = document.getElementById('listofusers');
-                const childNode = `<li> ${trial.name} - ${trial.email} </li> `
+                const childNode = `<li> ${trial.name} - ${trial.email} 
+                    <button> Delete </button>
+                    </li> `
                 parentNode1.innerHTML = parentNode1.innerHTML+ childNode;
             }
         </script>
     </body>
 </html>
+
 
 
 
