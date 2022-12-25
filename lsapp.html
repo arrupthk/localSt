@@ -9,6 +9,7 @@
             <input type="tel" name ="telephoneNo" required/><br>
             <button> Submit</button>
         </form>
+        <ul id="listofusers"></ul>
         <script>
             function saveToLocalStorage(event){
                 event.preventDefault();
@@ -26,8 +27,13 @@ PhoneNo
 
 //localStorage.setItem('userDetailsinObj', JSON.stringify(obj));
 localStorage.setItem(obj.PhoneNo, JSON.stringify(obj));
-
-
+showNewUserOnScreen(obj)
+            }
+            function showNewUserOnScreen(trial)
+            {
+                const parentNode1 = document.getElementById('listofusers');
+                const childNode = `<li> ${trial.name} - ${trial.email} </li> `
+                parentNode1.innerHTML = parentNode1.innerHTML+ childNode;
             }
         </script>
     </body>
